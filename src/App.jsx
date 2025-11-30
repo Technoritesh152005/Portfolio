@@ -12,14 +12,15 @@ function App() {
 
   // Apply theme on app load
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
+  const stored = localStorage.getItem("theme");
 
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []); // runs only once
+  if (!stored) {
+    localStorage.setItem("theme", "dark"); // set default first time
+  }
+
+  document.documentElement.classList.add("dark");
+}, []);
+// runs only once
 
   return (
     <BrowserRouter>
