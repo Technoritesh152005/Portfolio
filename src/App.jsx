@@ -7,6 +7,7 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Contact } from "./pages/Contact";
 import { Education } from "./pages/Education";
+import { MelodisDetail } from "./pages/MelodisDetail";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/melodis_detail" element={<MelodisDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/education" element={<Education/>}  />
       </Routes>

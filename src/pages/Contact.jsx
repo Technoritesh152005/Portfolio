@@ -76,7 +76,7 @@ export const Contact = () => {
             <div className="pt-4">
               <div className="flex space-x-5 text-primary text-2xl">
                 <a
-                  href="https://leetcode.com/u/riteshkhilari15/"
+                  href="https://leetcode.com/u/Ritesh_Khilari_07/"
                   target="_blank"
                 >
                   <Code2 className="hover:scale-110 transition cursor-pointer" />

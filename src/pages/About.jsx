@@ -1,98 +1,151 @@
-import { Code, User, Briefcase } from "lucide-react";
+/* eslint-disable no-unused-vars */
+import {
+  BrainCircuit,
+  Layers3,
+  ServerCog,
+  Sparkles,
+} from "lucide-react";
+import { motion } from "motion/react";
+
+const capabilities = [
+  {
+    number: "01",
+    icon: Layers3,
+    title: "Full-stack product development",
+    description:
+      "Building responsive React applications backed by well-structured APIs, authentication, databases, and the engineering details that turn features into usable products.",
+    tags: ["React", "Next.js", "APIs", "Auth"],
+  },
+  {
+    number: "02",
+    icon: ServerCog,
+    title: "Backend & system engineering",
+    description:
+      "Working with Java/Spring Boot and Node.js/Express, PostgreSQL, Prisma, Redis, queues, caching, APIs, and system-design concepts to build reliable backend services.",
+    tags: ["Spring Boot", "Node.js", "Redis", "PostgreSQL"],
+  },
+  {
+    number: "03",
+    icon: BrainCircuit,
+    title: "AI & RAG systems",
+    description:
+      "Building AI-powered applications using RAG, embeddings, semantic search, document processing, vector databases, and grounded responses with an emphasis on useful and traceable outputs.",
+    tags: ["RAG", "Embeddings", "Semantic search", "Vector DBs"],
+  },
+];
 
 export const About = () => {
   return (
-    <section
-      id="about"
-      className="py-20 md:py-24 px-4 relative bg-secondary/20 backdrop-blur-xl border-t border-white/10"
-    >
-      <div className="max-w-5xl mx-auto">
+    <main className="relative min-h-screen overflow-hidden bg-[#07090d] px-4 pb-24 pt-28 text-white sm:px-6">
+      <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(167,139,250,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.08)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_bottom,black,transparent_92%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[-12rem] top-[38rem] h-[360px] w-[360px] rounded-full bg-cyan-400/10 blur-[100px]" />
 
-        <p className="text-sm uppercase tracking-[0.24em] text-primary mb-4">About the engineer</p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-12">
-          Building systems with <span className="text-primary">care and intent.</span>
-        </h2>
+      <div className="relative mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mx-auto mb-16 max-w-4xl text-center"
+        >
+          <div className="mb-7 flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-violet-300">
+            <span className="h-px w-10 bg-violet-400" />
+            About the engineer
+          </div>
+          <h1 className="max-w-3xl text-5xl font-bold leading-[0.96] tracking-tight sm:text-7xl">
+            Building software
+            <span className="block text-violet-300">with purpose.</span>
+          </h1>
+          <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/65 sm:text-2xl">
+            A full-stack developer who cares about both the product and the
+            system behind it.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-
-          {/* LEFT SIDE - TEXT */}
-          <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-semibold leading-snug">
-              A product-minded developer who thinks beyond the happy path.
-            </h3>
-
-            <p className="text-muted-foreground">
-              I'm Ritesh Khilari, a Full-Stack Web and Java Developer focused on
-              building reliable systems from interface to infrastructure. I care
-              about the details users feel and the architecture teams have to maintain.
-            </p>
-
-            <p className="text-muted-foreground">
-              My work spans React, Node.js, Fastify, Java, Spring Boot, PostgreSQL,
-              Redis, AI workflows, and cloud deployment. I enjoy turning complex
-              requirements into clear boundaries, measurable behavior, and useful products.
-            </p>
-
-            <p className="text-muted-foreground">
-              I am looking for software engineering roles where I can contribute
-              across the stack, learn from strong teams, and keep raising the quality
-              bar for the systems I help ship.
-            </p>
-
-            {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 sm:justify-start">
-              <a href="/contact" className="cosmic-button">
-                Let’s talk engineering
-              </a>
-            
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                className="px-6 py-2 sm:ml-4 rounded-full border border-primary text-primary font-medium
-                hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-sm hover:shadow-md"
-              >
-                Download resume
-              </a>
+        <div className="flex justify-center">
+          <motion.section
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
+            className="max-w-3xl text-center"
+          >
+            <div className="mb-8 flex items-center justify-center gap-3 text-sm text-white/45">
+              <Sparkles size={16} className="text-violet-300" />
+              <span>From idea to architecture to deployment</span>
             </div>
-          </div>
+            <div className="space-y-6 text-[1.05rem] leading-8 text-white/70">
+              <p>
+                I&apos;m <strong className="font-semibold text-white">Ritesh Khilari</strong>,
+                a Full-Stack Developer focused on building practical, scalable
+                web applications and backend systems. I enjoy understanding how
+                things work beneath the surface, from user interfaces and APIs
+                to databases, caching, queues, and deployment.
+              </p>
+              <p>
+                My work spans <strong className="font-medium text-white/90">React, Next.js, JavaScript, Node.js, Express.js, Java, Spring Boot, PostgreSQL, Prisma, Redis, Docker, and AI/RAG systems.</strong>{" "}
+                I&apos;ve built projects involving authentication, REST and
+                GraphQL APIs, asynchronous processing, semantic search,
+                real-time systems, and AI-powered workflows.
+              </p>
+              <p>
+                I like taking a problem from <span className="text-violet-300">idea</span>{" "}
+                <span className="text-white/35">-&gt;</span> architecture{" "}
+                <span className="text-white/35">-&gt;</span> implementation{" "}
+                <span className="text-white/35">-&gt;</span> deployment, while
+                keeping the code understandable and the system reliable.
+              </p>
+            </div>
 
-          {/* RIGHT SIDE - CARDS */}
-          <div className="grid gap-6">
-
-            <AboutCard
-              icon={<Code className="text-primary h-6 w-6" />}
-              title="Full-stack product work"
-              desc="Thoughtful React experiences backed by APIs, data models, validation, and the operational details that make features dependable."
-            />
-
-            <AboutCard
-              icon={<User className="text-primary h-6 w-6" />}
-              title="Backend architecture"
-              desc="Java and Spring Boot, Node.js and Fastify, PostgreSQL, Redis, queues, realtime systems, caching, and performance-aware design."
-            />
-
-            <AboutCard
-              icon={<Briefcase className="text-primary h-6 w-6" />}
-              title="Reliable AI systems"
-              desc="RAG, embeddings, semantic search, evaluation, and grounded outputs designed to be traceable instead of magical."
-            />
-
-          </div>
+          </motion.section>
         </div>
+
+        <section className="mt-28">
+          <div className="mb-8 flex items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-violet-300">What I build</p>
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Engineering across the stack.</h2>
+            </div>
+            <p className="hidden max-w-xs text-right text-sm leading-6 text-white/45 md:block">Useful systems, clear boundaries, and a product mindset at every layer.</p>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            {capabilities.map(({ number, icon: Icon, title, description, tags }, index) => (
+              <motion.article
+                key={title}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.55, delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition-colors hover:border-violet-300/35"
+              >
+                <div className="mb-12 flex items-center justify-between">
+                  <span className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-violet-200 transition-transform group-hover:rotate-6">
+                    <Icon size={21} />
+                  </span>
+                  <span className="font-mono text-xs text-white/25">{number}</span>
+                </div>
+                <h3 className="max-w-xs text-xl font-semibold leading-snug">{title}</h3>
+                <p className="mt-4 text-sm leading-6 text-white/55">{description}</p>
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-white/10 px-2.5 py-1 text-[0.68rem] text-white/45">{tag}</span>
+                  ))}
+                </div>
+                <div className="pointer-events-none absolute -bottom-12 -right-8 size-32 rounded-full bg-violet-400/10 blur-3xl transition-opacity group-hover:opacity-100" />
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-20 border-t border-white/10 pt-8 text-center text-sm text-white/45"
+        >
+          Currently looking for software engineering opportunities where I can contribute to real products, work with strong engineers, and continue growing across the full stack.
+        </motion.div>
       </div>
-    </section>
+    </main>
   );
 };
-
-const AboutCard = ({ icon, title, desc }) => (
-  <div className="rounded-xl p-6 bg-card/40 backdrop-blur-md border border-primary/20 shadow-md 
-                  hover:shadow-primary/30 transition-all duration-300 card-hover">
-    <div className="flex items-start gap-4">
-      <div className="p-3 rounded-lg bg-primary/10">{icon}</div>
-      <div>
-        <h4 className="text-lg font-semibold">{title}</h4>
-        <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{desc}</p>
-      </div>
-    </div>
-  </div>
-);

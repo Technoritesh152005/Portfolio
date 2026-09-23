@@ -1,106 +1,104 @@
-import { useState } from "react";
-import { cn } from "../lib/util";
+/* eslint-disable no-unused-vars */
+import {
+  AWS,
+  Docker,
+  Figma,
+  Git,
+  GraphQL,
+  HTML5,
+  Java,
+  JavaScript,
+  Jest,
+  Linux,
+  MongoDB,
+  NextJs,
+  NodeJs,
+  PostgreSQL,
+  Postman,
+  Prisma,
+  React,
+  Redis,
+  Spring,
+  TailwindCSS,
+} from "developer-icons";
+import { motion } from "motion/react";
 
-const skills = [
-  // Frontend
-  { name: "HTML", level: 90, category: "frontend" },
-  { name: "CSS", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 85, category: "frontend" },
-  { name: "JavaScript", level: 85, category: "frontend" },
-  { name: "React.js", level: 80, category: "frontend" },
-
-  // Backend
-  { name: "Node.js", level: 70, category: "backend" },
-  { name: "Express.js", level: 75, category: "backend" },
-  { name: "REST APIs", level: 70, category: "backend" },
-  { name: "Prisma ", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
-
-  // Database
-  { name: "SQL", level: 60, category: "database" },
-  { name: "Mongodb", level: 60, category: "database" },
-
-  // Tools
-  { name: "Git & GitHub", level: 80, category: "tools" },
-  { name: "VS Code", level: 90, category: "tools" },
-  { name: "AWS (Basics)", level: 45, category: "tools" },
-
-  // Core
-  { name: "Data Structures and Algorithms", level: 55, category: "core" },
+const groups = [
+  {
+    label: "Frontend engineering",
+    description: "Interfaces that stay clear, responsive, and maintainable.",
+    skills: [
+      ["Next.js", NextJs], ["React", React], ["JavaScript", JavaScript],
+      ["HTML5", HTML5], ["Tailwind CSS", TailwindCSS],
+    ],
+  },
+  {
+    label: "Backend and APIs",
+    description: "Services, contracts, validation, and realtime application behavior.",
+    skills: [
+      ["Node.js", NodeJs], ["Fastify"], ["Java", Java], ["Spring Boot", Spring],
+      ["REST APIs"], ["GraphQL", GraphQL], ["Postman", Postman],
+    ],
+  },
+  {
+    label: "Data and distributed systems",
+    description: "Reliable persistence, caching, search, and asynchronous workflows.",
+    skills: [
+      ["PostgreSQL", PostgreSQL], ["Prisma", Prisma], ["MongoDB", MongoDB],
+      ["Redis", Redis], ["PostGIS"], ["pgvector"], ["BullMQ"], ["Socket.IO"],
+    ],
+  },
+  {
+    label: "System design",
+    description: "Thinking from requirements to boundaries, tradeoffs, and operations.",
+    skills: [
+      ["High-Level Design (HLD)"], ["Low-Level Design (LLD)"],
+      ["Microservice architecture"], ["Database design"], ["API design"],
+      ["Caching and queues"], ["Realtime systems"],
+    ],
+  },
+  {
+    label: "Infrastructure and workflow",
+    description: "Shipping software with repeatable development and deployment practices.",
+    skills: [
+      ["Docker", Docker], ["Docker Compose"], ["AWS", AWS], ["Caddy"],
+      ["Linux", Linux], ["Git", Git], ["GitHub"], ["Jest", Jest], ["Figma", Figma],
+    ],
+  },
 ];
 
-const categories = ["all", "frontend", "backend", "database", "tools", "core"];
-
 export const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
-
   return (
-    <section
-      id="skills"
-      className="
-        relative py-24 px-4 overflow-hidden
-        bg-background
-        bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.15),_transparent_60%)]
-        before:absolute before:inset-0 before:bg-[url('/grid.svg')] before:opacity-[0.06] before:pointer-events-none
-      "
-    >
-      {/* Floating glow effect */}
-      <div className="absolute -z-10 top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[200px]" />
+    <main className="relative min-h-screen overflow-hidden bg-[#07090d] px-4 pb-24 pt-28 text-white sm:px-6">
+      <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(167,139,250,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.08)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[440px] w-[760px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-[130px]" />
 
-      <div className="container mx-auto max-w-5xl relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary">Skills</span>
-        </h2>
+      <div className="relative mx-auto max-w-6xl">
+        <motion.header initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mx-auto mb-16 max-w-3xl text-center">
+          <p className="mb-5 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-violet-300">Engineering toolkit</p>
+          <h1 className="font-heading text-5xl font-bold leading-[0.96] tracking-tight sm:text-7xl">Skills for building<span className="block text-violet-300">the whole system.</span></h1>
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-white/60 sm:text-xl">A practical mix of product development, backend engineering, system design, and infrastructure thinking.</p>
+        </motion.header>
 
-        {/* CATEGORY FILTER */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "px-5 py-2 rounded-full text-sm font-medium capitalize transition-all duration-300 backdrop-blur-sm",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30 scale-105"
-                  : "bg-card text-foreground border border-border hover:bg-primary/10"
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        {/* SKILL CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredSkills.map((skill, i) => (
-            <div
-              key={i}
-              className="bg-card p-6 rounded-xl border border-border shadow-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.35)] hover:scale-[1.02]"
-            >
-              <h3 className="font-semibold text-lg mb-3 text-foreground tracking-tight">
-                {skill.name}
-              </h3>
-
-              {/* PROGRESS BAR */}
-              <div className="relative h-2 w-full bg-secondary/60 rounded-full overflow-hidden">
-                <div
-                  className="absolute h-full bg-primary rounded-full animate-[grow_1.4s_ease-out_forwards]"
-                  style={{ width: `${skill.level}%` }}
-                />
+        <div className="space-y-5">
+          {groups.map(({ label, description, skills }, index) => (
+            <motion.section key={label} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.5, delay: index * 0.05 }} className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 sm:p-8">
+              <div className="mb-6 flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
+                <div><p className="mb-2 font-mono text-xs tracking-[0.2em] text-violet-300/75">0{index + 1}</p><h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">{label}</h2></div>
+                <p className="max-w-sm text-sm leading-6 text-white/40">{description}</p>
               </div>
-
-              {/* PERCENTAGE */}
-              <p className="text-right mt-1 text-sm font-medium text-muted-foreground">
-                {skill.level}%
-              </p>
-            </div>
+              <div className="flex flex-wrap gap-3">
+                {skills.map(([name, Icon]) => (
+                  <div key={name} className="group inline-flex items-center gap-2.5 rounded-xl border border-white/10 bg-black/15 px-3.5 py-2.5 text-sm text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-300/35 hover:bg-violet-300/[0.05]">
+                    {Icon ? <Icon className="size-6 shrink-0 transition-transform duration-300 group-hover:scale-110" /> : <span className="grid size-6 shrink-0 place-items-center rounded-md border border-violet-300/20 bg-violet-300/10 font-mono text-[0.58rem] text-violet-200">&lt;/&gt;</span>}
+                    {name}
+                  </div>
+                ))}
+              </div>
+            </motion.section>
           ))}
         </div>
       </div>
-    </section>
+    </main>
   );
 };

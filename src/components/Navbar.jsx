@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { cn } from "../lib/util";
-import { Menu, X } from "lucide-react"; // <-- required
+import { Menu, X } from "lucide-react";
+import { GooeyNav } from "./ui/gooey-nav";
 
 const NavItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Skills", href: "/skills" },
-  { name: "Contact", href: "/contact" },
-  { name: "Education"  , href: "/education"}
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Skills", href: "/skills" },
+  { label: "Contact", href: "/contact" },
+  { label: "Education", href: "/education" },
 ];
 
 export const Navbar = () => {
@@ -42,16 +42,14 @@ export const Navbar = () => {
         </a>
 
         {/* desktop version */}
-        <div className="hidden md:flex space-x-8">
-          {NavItems.map((item, index) => (
-            <Link
-              key={index}
-              to={item.href}
-              className="text-foreground/80 hover:text-primary px-4 py-2 transition-colors duration-300"
-            >
-              {item.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center">
+          <GooeyNav
+            items={NavItems}
+            activeColor="#a78bfa"
+            activeLabelColor="#ffffff"
+            size="sm"
+            className="shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
+          />
         </div>
 
         {/* Mobile Toggle Button */}
@@ -75,14 +73,14 @@ export const Navbar = () => {
         >
           <div className="flex flex-col space">
             {NavItems.map((item, index) => (
-              <Link
+              <a
                 key={index}
-                to={item.href}
+                href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="text-foreground/80 hover:text-primary px-4 py-2 transition-colors duration-300"
               >
-                {item.name}
-              </Link>
+                {item.label}
+              </a>
             ))}
           </div>
         </div>
