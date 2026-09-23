@@ -8,8 +8,9 @@ export const About = () => {
     >
       <div className="max-w-5xl mx-auto">
 
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-          About <span className="text-primary">Me</span>
+        <p className="text-sm uppercase tracking-[0.24em] text-primary mb-4">About the engineer</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-12">
+          Building systems with <span className="text-primary">care and intent.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
@@ -17,29 +18,31 @@ export const About = () => {
           {/* LEFT SIDE - TEXT */}
           <div className="space-y-6">
             <h3 className="text-2xl md:text-3xl font-semibold leading-snug">
-              Passionate Full Stack Web Developer
+              A product-minded developer who thinks beyond the happy path.
             </h3>
 
             <p className="text-muted-foreground">
-              I'm Ritesh Khilari, a developer who turns ideas into functional, elegant, and efficient digital experiences. 
-              I enjoy building things that live on the internet — from minimal user interfaces to complex full-stack systems.
+              I'm Ritesh Khilari, a Full-Stack Web and Java Developer focused on
+              building reliable systems from interface to infrastructure. I care
+              about the details users feel and the architecture teams have to maintain.
             </p>
 
             <p className="text-muted-foreground">
-              My journey began with HTML, CSS, and JavaScript, but curiosity pushed me deeper into the world of scalable architecture, 
-              backend APIs, databases, and modern frameworks like React, Node.js, Prisma, and GraphQL. I don’t just code — I understand 
-              how systems connect, perform, and evolve.
+              My work spans React, Node.js, Fastify, Java, Spring Boot, PostgreSQL,
+              Redis, AI workflows, and cloud deployment. I enjoy turning complex
+              requirements into clear boundaries, measurable behavior, and useful products.
             </p>
 
             <p className="text-muted-foreground">
-              My aim is not just to build applications, but to create experiences that feel intuitive, thoughtful, and reliable. 
-              I’m working toward becoming a software engineer capable of building real-world solutions that positively affect people's lives.
+              I am looking for software engineering roles where I can contribute
+              across the stack, learn from strong teams, and keep raising the quality
+              bar for the systems I help ship.
             </p>
 
             {/* BUTTONS */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 sm:justify-start">
               <a href="/contact" className="cosmic-button">
-                Get in Touch
+                Let’s talk engineering
               </a>
             
               <a
@@ -48,7 +51,7 @@ export const About = () => {
                 className="px-6 py-2 sm:ml-4 rounded-full border border-primary text-primary font-medium
                 hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                Download Resume
+                Download resume
               </a>
             </div>
           </div>
@@ -58,20 +61,20 @@ export const About = () => {
 
             <AboutCard
               icon={<Code className="text-primary h-6 w-6" />}
-              title="Web Development"
-              desc="Creating responsive and visually appealing interfaces using modern frontend technologies and clean UI patterns."
+              title="Full-stack product work"
+              desc="Thoughtful React experiences backed by APIs, data models, validation, and the operational details that make features dependable."
             />
 
             <AboutCard
               icon={<User className="text-primary h-6 w-6" />}
-              title="Full Stack Development"
-              desc="Building complete web solutions by handling frontend components, backend logic, APIs, and databases — ensuring smooth and scalable systems."
+              title="Backend architecture"
+              desc="Java and Spring Boot, Node.js and Fastify, PostgreSQL, Redis, queues, realtime systems, caching, and performance-aware design."
             />
 
             <AboutCard
               icon={<Briefcase className="text-primary h-6 w-6" />}
-              title="Project Experience"
-              desc="Developing real projects to sharpen my problem-solving skills, explore new technologies, and understand how features evolve from idea to deployment."
+              title="Reliable AI systems"
+              desc="RAG, embeddings, semantic search, evaluation, and grounded outputs designed to be traceable instead of magical."
             />
 
           </div>
