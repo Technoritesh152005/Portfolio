@@ -37,26 +37,30 @@ export const HeroSection = () => {
           </div>
 
           <div className="border-l border-primary/40 pl-6 lg:mb-2 opacity-0 animate-fade-in-delay-4">
-            <figure className="relative w-full max-w-[19rem] mb-10">
-              <div className="absolute -top-3 -right-3 h-full w-full border border-primary/40" aria-hidden="true" />
-              <div className="relative aspect-[4/5] overflow-hidden border-8 border-card bg-card shadow-2xl">
+            <div className="grid grid-cols-[minmax(8rem,10rem)_1fr] gap-6 items-start">
+              <figure className="relative w-full">
+                <div className="absolute -top-2 -right-2 h-full w-full border border-primary/40" aria-hidden="true" />
+                <div className="relative aspect-[3/4] overflow-hidden border-4 border-card bg-card shadow-2xl">
                 <img
-                  src="/WhatsApp%20Image%202026-09-23%20at%201.08.51%20PM.jpeg"
+                  src="/WhatsApp Image 2026-09-23 at 1.08.51 PM.jpeg"
                   alt="Ritesh Khilari"
                   className="h-full w-full object-cover object-[58%_58%] grayscale-[15%] transition duration-500 hover:grayscale-0"
                 />
+                </div>
+                <figcaption className="mt-3 text-[0.62rem] uppercase tracking-[0.16em] text-muted-foreground">
+                  Ritesh Khilari
+                </figcaption>
+              </figure>
+
+              <div className="pt-1">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-5">Currently focused on</p>
+                <div className="space-y-4 text-base leading-snug">
+                  <p><span className="text-primary mr-2">01</span> Java and Spring Boot</p>
+                  <p><span className="text-primary mr-2">02</span> Node.js and distributed systems</p>
+                  <p><span className="text-primary mr-2">03</span> AI applications and RAG</p>
+                  <p><span className="text-primary mr-2">04</span> Cloud deployment and security</p>
+                </div>
               </div>
-              <figcaption className="mt-3 flex items-center justify-between text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
-                <span>Ritesh Khilari</span>
-                <span>01 / 04</span>
-              </figcaption>
-            </figure>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-5">Currently focused on</p>
-            <div className="space-y-4 text-lg">
-              <p><span className="text-primary mr-3">01</span> Java and Spring Boot</p>
-              <p><span className="text-primary mr-3">02</span> Node.js and distributed systems</p>
-              <p><span className="text-primary mr-3">03</span> AI applications and RAG</p>
-              <p><span className="text-primary mr-3">04</span> Cloud deployment and security</p>
             </div>
           </div>
         </div>
