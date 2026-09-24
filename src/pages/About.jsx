@@ -6,6 +6,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion } from "motion/react";
+import profileImage from "../assets/murfinal.jpeg";
 
 const capabilities = [
   {
@@ -62,14 +63,14 @@ export const About = () => {
           </p>
         </motion.div>
 
-        <div className="flex justify-center">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)] lg:gap-20">
           <motion.section
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
-            className="max-w-3xl text-center"
+            className="max-w-3xl"
           >
-            <div className="mb-8 flex items-center justify-center gap-3 text-sm text-white/45">
+            <div className="mb-8 flex items-center gap-3 text-sm text-white/45">
               <Sparkles size={16} className="text-violet-300" />
               <span>From idea to architecture to deployment</span>
             </div>
@@ -97,6 +98,23 @@ export const About = () => {
             </div>
 
           </motion.section>
+
+          <motion.figure
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            className="relative mx-auto w-full max-w-[340px] lg:mx-0 lg:justify-self-end"
+          >
+            <div className="absolute -right-3 -top-3 h-full w-full rounded-2xl border border-violet-300/35" aria-hidden="true" />
+            <div className="absolute -bottom-3 -left-3 h-20 w-20 rounded-bl-2xl border-b-2 border-l-2 border-cyan-300/35" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#0d1117] p-2 shadow-[0_24px_70px_rgba(139,92,246,0.16)]">
+              <img
+                src={profileImage}
+                alt="Ritesh Khilari"
+                className="aspect-[4/5] w-full rounded-xl border border-white/10 object-cover object-center"
+              />
+            </div>
+          </motion.figure>
         </div>
 
         <section className="mt-28">
