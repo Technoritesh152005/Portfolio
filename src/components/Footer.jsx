@@ -28,8 +28,8 @@ export const Footer = () => {
           <Link to="/projects" className="hover:text-primary transition-colors">
             Projects
           </Link>
-          <Link to="/contact" className="hover:text-primary transition-colors">
-            Contact
+          <Link to="/blog" className="hover:text-primary transition-colors">
+            Blog
           </Link>
         </div>
 

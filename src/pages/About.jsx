@@ -43,26 +43,6 @@ export const About = () => {
       <div className="pointer-events-none absolute right-[-12rem] top-[38rem] h-[360px] w-[360px] rounded-full bg-cyan-400/10 blur-[100px]" />
 
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mx-auto mb-16 max-w-4xl text-center"
-        >
-          <div className="mb-7 flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-violet-300">
-            <span className="h-px w-10 bg-violet-400" />
-            About the engineer
-          </div>
-          <h1 className="max-w-3xl text-5xl font-bold leading-[0.96] tracking-tight sm:text-7xl">
-            Building software
-            <span className="block text-violet-300">with purpose.</span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/65 sm:text-2xl">
-            A full-stack developer who cares about both the product and the
-            system behind it.
-          </p>
-        </motion.div>
-
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)] lg:gap-20">
           <motion.section
             initial={{ opacity: 0, x: -24 }}
@@ -76,24 +56,25 @@ export const About = () => {
             </div>
             <div className="space-y-6 text-[1.05rem] leading-8 text-white/70">
               <p>
-                I&apos;m <strong className="font-semibold text-white">Ritesh Khilari</strong>,
-                a Full-Stack Developer focused on building practical, scalable
-                web applications and backend systems. I enjoy understanding how
-                things work beneath the surface, from user interfaces and APIs
-                to databases, caching, queues, and deployment.
+                I&apos;m a final-year Computer Engineering student specializing
+                in backend engineering, distributed systems, and scalable
+                application architecture. My work focuses on engineering
+                challenges such as concurrency, caching, asynchronous
+                processing, fault tolerance, data consistency, and
+                high-throughput communication.
               </p>
               <p>
-                My work spans <strong className="font-medium text-white/90">React, Next.js, JavaScript, Node.js, Express.js, Java, Spring Boot, PostgreSQL, Prisma, Redis, Docker, and AI/RAG systems.</strong>{" "}
-                I&apos;ve built projects involving authentication, REST and
-                GraphQL APIs, asynchronous processing, semantic search,
-                real-time systems, and AI-powered workflows.
+                I particularly enjoy working with distributed and
+                microservice-based architectures, and exploring how components
+                coordinate reliably at scale. My recent projects include RAG
+                infrastructure and AI-focused backend systems involving vector
+                search, queues, Redis, PostgreSQL, APIs, and service-to-service
+                communication.
               </p>
               <p>
-                I like taking a problem from <span className="text-violet-300">idea</span>{" "}
-                <span className="text-white/35">-&gt;</span> architecture{" "}
-                <span className="text-white/35">-&gt;</span> implementation{" "}
-                <span className="text-white/35">-&gt;</span> deployment, while
-                keeping the code understandable and the system reliable.
+                I&apos;m driven to understand not only how to build a system, but
+                why an architecture is right for its workload and failure
+                conditions.
               </p>
             </div>
 

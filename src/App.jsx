@@ -5,9 +5,10 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
-import { Contact } from "./pages/Contact";
 import { Education } from "./pages/Education";
 import { MelodisDetail } from "./pages/MelodisDetail";
+import { Blogs } from "./pages/Blogs";
+import { MyStuff } from "./pages/MyStuff";
 
 function App() {
 
@@ -33,8 +34,9 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/melodis_detail" element={<MelodisDetail />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blogs />} />
         <Route path="/education" element={<Education/>}  />
+        <Route path="/my-stuff" element={<MyStuff />} />
       </Routes>
     </BrowserRouter>
   );
