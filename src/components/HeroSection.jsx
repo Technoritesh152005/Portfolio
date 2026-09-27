@@ -1,6 +1,7 @@
 import { ArrowUpRight, Code2, Github, Linkedin, Mail } from "lucide-react";
 import { Folder } from "./ui/folder-component";
 import GitHubActivity from "./ui/github-activity";
+import LeetCodeActivity from "./ui/leetcode-activity";
 
 export const HeroSection = () => {
   return (
@@ -79,6 +80,13 @@ export const HeroSection = () => {
               className="rounded-2xl border border-white/10 bg-[#0d1117]/60 p-4"
             />
           </div>
+        </div>
+
+        <div className="mx-auto mt-8 flex max-w-[760px] flex-col items-center text-center opacity-0 animate-fade-in-delay-4">
+          <div className="mb-3 text-center text-[0.62rem] font-medium uppercase tracking-[0.28em] text-white/60">
+            LeetCode activity
+          </div>
+          <LeetCodeActivity username="Ritesh_Khilari_07" />
         </div>
       </div>
     </section>
