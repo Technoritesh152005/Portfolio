@@ -8,7 +8,7 @@ const education = [
     period: "2023 — 2027",
     title: "B.Tech in Computer Science & Engineering",
     institution: "Dr. D. Y. Patil Pratishthan’s College of Engineering, Kolhapur",
-    result: "8.5 CGPA through 6th semester",
+    result: "CGPA: 8.3 / 10",
   },
   {
     icon: School,

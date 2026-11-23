@@ -47,6 +47,21 @@ const projects = [
       "AI-assisted dating platform for verified profiles, compatibility discovery, safer matching, and realtime connection.",
     stack: ["Next.js", "JavaScript", "Fastify", "PostgreSQL", "Redis", "Socket.IO"],
   },
+  {
+    id: "llm-gateway",
+    title: "TheLlmGateway",
+    badge: "In Progress",
+    image: "/blog.png",
+    imageAlt: "Multi-Tenant LLM Gateway architecture interface",
+    liveUrl: "https://github.com/Technoritesh152005/TheLlmGateway",
+    githubUrl: "https://github.com/Technoritesh152005/TheLlmGateway",
+    actionLabel: "View source",
+    actionUrl: "https://github.com/Technoritesh152005/TheLlmGateway",
+    isExternalAction: true,
+    description:
+      "Multi-tenant LLM gateway providing a unified API across OpenAI, Anthropic, and Groq, with per-tenant API-key authentication, distributed rate limiting, and automatic provider failover with Kafka asynchronous billing.",
+    stack: ["Java", "Spring Boot", "WebFlux", "Kafka", "Redis", "PostgreSQL", "Razorpay"],
+  },
 ];
 
 export const Projects = () => {

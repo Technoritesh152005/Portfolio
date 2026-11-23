@@ -1,9 +1,13 @@
-import { ArrowUpRight, Code2, Github, Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Code2, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Folder } from "./ui/folder-component";
 import GitHubActivity from "./ui/github-activity";
 import LeetCodeActivity from "./ui/leetcode-activity";
+import { ResumeModal } from "./ResumeModal";
 
 export const HeroSection = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section
       id="hero"
@@ -35,21 +39,20 @@ export const HeroSection = () => {
               >
                 Explore selected work <ArrowUpRight size={17} />
               </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#0d1117]/40 px-4 py-2.25 font-medium text-base text-white/90 transition-colors hover:border-[#a78bfa] hover:text-[#d9c8ff]"
+              <button
+                type="button"
+                onClick={() => setIsResumeOpen(true)}
+                className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#0d1117]/40 px-4 py-2.25 font-medium text-base text-white/90 transition-all duration-200 hover:border-[#a78bfa] hover:text-[#d9c8ff] cursor-pointer"
               >
                 <span>Resume</span>
                 <span className="inline-flex h-10 w-12 items-center justify-center overflow-visible transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <Folder color="blue" size="sm" className="h-10 w-12 scale-[0.22] origin-center opacity-90" />
                 </span>
-              </a>
+              </button>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-foreground opacity-0 animate-fade-in-delay-4">
-              <a href="mailto:riteshkhilari4@gmail.com" className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-[#d9c8ff]">
+              <a href="mailto:riteshkhilari.dev@gmail.com" className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-[#d9c8ff]">
                 <Mail size={15} /> Email
               </a>
               <a href="https://github.com/Technoritesh152005" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-[#d9c8ff]">
@@ -89,6 +92,12 @@ export const HeroSection = () => {
           <LeetCodeActivity username="Ritesh_Khilari_07" />
         </div>
       </div>
+
+      {/* Interactive Resume Command Center Modal */}
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </section>
   );
 };
